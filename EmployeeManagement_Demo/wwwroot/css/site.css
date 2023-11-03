@@ -1,0 +1,31 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Custom Styles*/
+
+.img {
+    width: auto;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.btn {
+    width: 85px;
+}
+

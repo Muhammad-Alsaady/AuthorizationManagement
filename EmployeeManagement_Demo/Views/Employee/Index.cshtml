@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Employee>
+@{
+    ViewBag.Title = "Employee List";
+}
+
+
+<h2 class="">Employees List</h2>
+<a class="btn btn-primary w-auto" asp-action="Create">Add Employee</a>
+<div class="container">
+    <div class="card-deck d-flex flex-column justify-content-center">
+
+        @foreach (var item in Model)
+        {
+            <div class="card m-3 col-6 ">
+                <div class="col-sm-12">
+                    <div class="card-header text-center">
+                        <h3>@item.Name</h3>
+                    </div>
+                    <img src="~/images/@item.PhotoPath" class="img-thumbnail img d-flex justify-content-center" alt="@item.Name">
+                    <div class="card-footer text-center">
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">View</a>
+                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

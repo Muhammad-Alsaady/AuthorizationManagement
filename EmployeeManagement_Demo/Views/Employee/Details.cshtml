@@ -1,0 +1,34 @@
+﻿@model Employee
+@{
+    ViewBag.Title = "Employee Details";
+}
+
+
+<h2>@Model.Name Details</h2>
+
+<a class="btn btn-primary m-3" style="width:auto"
+    asp-action="Create" asp-controller="Administrator">
+    Add New Role
+</a>
+
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>@Model.Name</h1>
+            </div>
+            <div class="card-body text-center">
+                <img src="~/images/@Model.PhotoPath" class="card-image-top img" alt="@Model.Name">
+                
+                <h3>ID: @Model.Id</h3>
+                <h3>Email: @Model.Email</h3>
+                <h3>Department: @Model.Department</h3>            
+            </div>
+            <div class="card-foter text-center">
+            <a class="btn btn-primary m-3" asp-action="Index">Back</a>
+            <a class="btn btn-primary m-3" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+            </div>
+        </div>
+    </div>
+</div>
